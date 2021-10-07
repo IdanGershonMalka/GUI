@@ -1,0 +1,42 @@
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JFrame;
+import java.awt.FlowLayout;
+import javax.swing.JButton;
+public class ShowFlowLayout extends JFrame
+{
+    
+    public ShowFlowLayout()
+    {
+        //LEFT is which side they are alligned to and the #'s are spaceing.
+        setLayout(new  FlowLayout(FlowLayout.LEFT, 10, 20));
+        
+        //Order is important. It decides how things are displayed
+        add(new JLabel("First Name"));
+        add(new JTextField(8));
+        
+        add(new JLabel("MI"));
+        add(new JTextField(1));
+        add(new JLabel("Last Name"));
+        add(new JTextField(8));
+        add(new JButton("Enter"));
+    }
+    
+}
+
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JFrame;
+import java.awt.FlowLayout;
+public class FLConstructer
+{
+    public static void main(String[] args)
+    {
+        ShowFlowLayout frame = new ShowFlowLayout();
+        frame.setTitle("ShowFlowLayout");
+        frame.setSize(200,200);
+        frame.setLocationRelativeTo(null);//centers frame
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+}
