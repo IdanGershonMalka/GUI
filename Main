@@ -1,0 +1,136 @@
+/** 
+ * Description: Container groups components sch as Frames, Panels, and Applets. 
+ */
+import java.awt.Container;
+
+/** 
+ *Description: JFrame is a window that is not contained in another window.
+ */
+import javax.swing.JFrame;
+
+/**
+ *Description: JPanel is an invisible container that holds u.i components.
+ */
+import javax.swing.JPanel;
+
+/**
+ *Description: Subclass of Applet.
+ */
+import javax.swing.JApplet;
+
+/**
+ *Description: Popup window that is used to quickly get into from the user or
+ * notify them of something.
+ */
+import javax.swing.JDialog;
+
+/**
+ *Description: Abstract class that gives graphical context to draw simple shapes
+ * and strings.
+ */
+import java.awt.Graphics;
+
+/**
+ *Description: Deals with color in GUI components.
+ */
+import java.awt.Color;
+
+/**
+ *Description: Specifies fonts in GUI components.
+ */
+import java.awt.Font;
+
+/**
+ *Description: Abstract class that gets properties of fonts.
+ */
+import java.awt.FontMetrics;
+
+/**
+ *Description: Encapsulates the width and height of a component.
+ */
+import java.awt.Dimension;
+
+/**
+ *Description: An interface that allows you to arrange the components in a container.
+ */
+import java.awt.LayoutManager;
+
+/**
+ *Description: 
+ */
+import javax.swing.JButton;
+
+/**
+ *Description:    
+ */
+import javax.swing.JComponent;
+
+/**
+ *Description: 
+ */
+import java.awt.Component;
+
+/**
+ *Description:    
+ */
+import javax.swing.AbstractButton;
+import javax.swing.*;
+import java.awt.FlowLayout;
+import java.awt.Color.*;
+import java.awt.BorderLayout;
+public class GuiBasics
+{
+    JFrame frame = new JFrame("MyFrame"); //Creates frame
+    JButton jbtOK = new JButton("OK");
+    
+    FlowLayout flowLayout = new FlowLayout();
+    
+    Font font1 = new Font("SansSerif", Font.BOLD, 16);
+    Font font2 = new Font("Serif", Font.BOLD + Font.ITALIC, 12);
+    
+    JPanel p = new JPanel();
+    
+    public GuiBasics()
+    {
+        frame.setSize(400,300); //Sets the frame size
+        flowLayout.setAlignment(FlowLayout.RIGHT);
+        //Horizontal gap
+        flowLayout.setHgap(50);
+        //Vertical gap
+        flowLayout.setVgap(20);
+        
+    }
+    
+    
+    public void checkIfTrue()
+    {
+        //System.out.println(jbtOK instanceof JButton);
+        //System.out.println(jbtOK instanceof AbstractButton);
+        //System.out.println(jbtOK instanceof JComponent);
+        //System.out.println(jbtOK instanceof Container);
+        //System.out.println(jbtOK instanceof Component);
+    }
+    
+    public void myFrame()
+    {
+        frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true); //Display the frame
+    }
+    
+    public void myFrameWithComponents()
+    {
+        int hGap = 10;
+        int vGap = 0;
+        p.setLayout(new BorderLayout(hGap, vGap));
+        p.add(new JButton("Hey Bud"), BorderLayout.EAST);
+        p.add(new JButton("Bye Bud"), BorderLayout.WEST);
+       
+        jbtOK.setBackground(Color.red);
+        jbtOK.setFont(font1);
+        p.add(jbtOK, BorderLayout.NORTH);
+        frame.add(p);
+        
+        //frame.remove(jbtOK);
+    }
+}
