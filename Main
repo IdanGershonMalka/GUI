@@ -134,3 +134,18 @@ public class GuiBasics
         //frame.remove(jbtOK);
     }
 }
+
+
+/**
+ * Java Programming book page number: 436
+ */
+public class Constructor
+{
+    public static void main(String[] args)
+    {
+        GuiBasics myGui = new GuiBasics();
+        myGui.checkIfTrue();
+        myGui.myFrame();
+        myGui.myFrameWithComponents();
+    }
+}   
